@@ -297,7 +297,7 @@
       if (depth >= keys.length) return rollup ? rollup.call(nest, array) : sortValues ? array.sort(sortValues) : array;
       var i = -1, n = array.length, key = keys[depth++], keyValue, object, valuesByKey = new d3_Map, values, o = {};
       while (++i < n) {
-        if (values = valuesByKey.get(keyValue = key(object = array[i]))) {
+        if (values == valuesByKey.get(keyValue = key(object = array[i]))) {
           values.push(object);
         } else {
           valuesByKey.set(keyValue, [ object ]);
